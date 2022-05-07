@@ -1,4 +1,5 @@
-$('#login-page').on('click', '.toggle-register-btn', (e) => {
+$('.login-page').on('click', '.toggle-register-btn', (e) => {
+    console.log('test');
     $('.login-form, .register-form').each((index, element) => {
         const $element = $(element);
 
