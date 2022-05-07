@@ -19,3 +19,6 @@
     <div class="header">
         <button id="logout-button" type="button">Logout</button>
     </div>
+    <?php print $content ?>
+    <script src="\JS\scripts.js" async defer></script>
+</body>

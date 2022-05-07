@@ -7,17 +7,15 @@ class View
 
     public function __construct($template_name, $data = [])
     {
-        $this->data = $data;
-        $this->view = file_get_contents(__DIR__ . '/SharedHeader.tpl');
-
+        $this->data = extract($data);
         $template_path = __DIR__ . '/' . $template_name . '.tpl';
-        if (file_exists($template_path)) {
-            $this->view .= file_get_contents($template_path);
-        } else {
-            $this->view .= "Page Not Found {$template_path}";
-        }
 
-        $this->view .= file_get_contents(__DIR__ . '/SharedFooter.tpl');
+        ob_start();
+        include __DIR__ . '/SharedHeader.tpl';
+        include $template_path;
+        include __DIR__ . '/SharedFooter.tpl';
+
+        $this->view = ob_get_clean();
     }
 
     public function getHTML()

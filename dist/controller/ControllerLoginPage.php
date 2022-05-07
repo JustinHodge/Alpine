@@ -23,6 +23,7 @@ class ControllerLoginPage extends Controller
         $this->user = $model_alpine_users->getUser($email);
         if (!empty($this->user) && password_verify($password, $this->user['user_password'])) {
             $_SESSION['logged_in'] = TRUE;
+            $_SESSION['email'] = $email;
             $_SESSION['name'] = $this->user['firstname'] . ' ' . $this->user['lastname'];
             $_SESSION['id'] = $this->user['user_id'];
             $_SESSION['access_level'] = $this->user['user_access_level'];
@@ -41,6 +42,7 @@ class ControllerLoginPage extends Controller
 
         if (!empty($userWasAdded)) {
             $_SESSION['logged_in'] = TRUE;
+            $_SESSION['email'] = $this->user['email'];
             $_SESSION['name'] = $this->user['firstname'] . ' ' . $this->user['lastname'];
             $_SESSION['id'] = $this->user['user_id'];
             $_SESSION['access_level'] = 1;
