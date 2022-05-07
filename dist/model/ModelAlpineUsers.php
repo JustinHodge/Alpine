@@ -14,4 +14,17 @@ class ModelAlpineUsers extends Model
 
         return $query->fetch_all();
     }
+
+    public function getUser($email, $hashed_password)
+    {
+        $sql = "
+            SELECT * FROM `alpine_users`
+            WHERE email={$email}
+            AND password={$hashed_password}
+        ";
+
+        $query = $this->db->query($sql);
+
+        return $query->fetch_all();
+    }
 }
