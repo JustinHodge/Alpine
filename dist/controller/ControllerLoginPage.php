@@ -31,8 +31,19 @@ class ControllerLoginPage extends Controller
 
     public function register()
     {
-        if (empty($_POST['email']) || empty($_POST['password'])) {
+        if (empty($_POST['email']) || empty($_POST['password']) || empty($_POST['firstname']) || empty($_POST['lastname'])) {
             return;
+        }
+
+        $_POST['password'] = password_hash($_POST['password'], null);
+        $model_alpine_users = new ModelAlpineUsers;
+        $userWasAdded = $model_alpine_users->addUser($_POST);
+
+        if (!empty($userWasAdded)) {
+            $_SESSION['logged_in'] = TRUE;
+            $_SESSION['name'] = $this->user['firstname'] . ' ' . $this->user['lastname'];
+            $_SESSION['id'] = $this->user['user_id'];
+            $_SESSION['access_level'] = 1;
         }
     }
 }

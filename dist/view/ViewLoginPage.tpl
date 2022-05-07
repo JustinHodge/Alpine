@@ -21,19 +21,19 @@
         <div class="input-group">
             <div class="label-input-set">
                 <label>First Name:</label>
-                <input id="firstname-input" type="text"></input>
+                <input id="firstname-input" name="firstname" type="text"></input>
             </div>
             <div class="label-input-set">
                 <label>Last Name:</label>
-                <input id="lastname-input" type="text"></input>
+                <input id="lastname-input" name="lastname" type="text"></input>
             </div>
             <div class="label-input-set">
                 <label>Email:</label>
-                <input id="email-input" type="email"></input>
+                <input id="email-input" name="email" type="email"></input>
             </div>
             <div class="label-input-set">
                 <label>Password:</label>
-                <input id="password-input" type="text"></input>
+                <input id="password-input" name="password" type="text"></input>
             </div>
             <div class="button-group">
                 <button class="toggle-register-btn" type="button">Back To Login</button>
