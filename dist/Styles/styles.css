@@ -16,7 +16,7 @@ body {
 }
 
 #logout-button {
-    margin-right: 40px;
+    margin-right: 60px;
 }
 
 .label-input-set {
@@ -53,6 +53,7 @@ button {
     border: 0px;
     border-radius: 3px;
     font-weight: 700;
+    box-shadow: 3px 3px 3px black;
 }
 
 legend {
