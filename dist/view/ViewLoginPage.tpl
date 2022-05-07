@@ -1,5 +1,5 @@
 <div class="login-page">
-    <form action="ControllerLoginPage/login" class="login-form">
+    <form method="post" action="ControllerLoginPage/login" class="login-form">
         <legend>LOGIN</legend>
         <div class="input-group">
             <div class="label-input-set">
@@ -16,7 +16,7 @@
             </div>
         </div>
     </form>
-    <form action="/register" class="register-form hidden">
+    <form method="post" action="ControllerLoginPage/register" class="register-form hidden">
         <legend>REGISTER</legend>
         <div class="input-group">
             <div class="label-input-set">
