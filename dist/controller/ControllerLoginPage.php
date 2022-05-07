@@ -27,6 +27,8 @@ class ControllerLoginPage extends Controller
             $_SESSION['name'] = $this->user['firstname'] . ' ' . $this->user['lastname'];
             $_SESSION['id'] = $this->user['user_id'];
             $_SESSION['access_level'] = $this->user['user_access_level'];
+
+            header('Location: /');
         }
     }
 
@@ -46,6 +48,8 @@ class ControllerLoginPage extends Controller
             $_SESSION['name'] = $_POST['firstname'] . ' ' . $_POST['lastname'];
             $_SESSION['id'] = $_POST['user_id'];
             $_SESSION['access_level'] = 1;
+
+            header('Location: /');
         }
     }
 }
