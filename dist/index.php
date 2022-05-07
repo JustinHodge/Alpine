@@ -8,6 +8,11 @@ define('MIN_ADMIN_LEVEL', 100);
 
 session_start();
 
+if (!empty($_GET['logout'])) {
+    session_destroy();
+    die();
+}
+
 spl_autoload_register(
     function ($class) {
         $file = 'model/' . $class . '.php';

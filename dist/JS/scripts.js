@@ -9,3 +9,9 @@ $('#login-page').on('click', '.toggle-register-btn', (e) => {
         }
     });
 });
+
+$('#logout-button').on('click', (e) => {
+    $.get('index.php', { logout: '1' }, () => {
+        window.location = window.location;
+    });
+});

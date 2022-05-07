@@ -31,6 +31,8 @@ class ControllerLoginPage extends Controller
 
     public function register()
     {
-        echo "register";
+        if (empty($_POST['email']) || empty($_POST['password'])) {
+            return;
+        }
     }
 }
