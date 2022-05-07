@@ -16,3 +16,11 @@ $('#logout-button').on('click', (e) => {
         window.location = window.location;
     });
 });
+
+$('#show-admin-page').on('click', (e) => {
+    $('.admin-page').removeClass('hidden');
+});
+
+$('#hide-admin-page').on('click', (e) => {
+    $('.admin-page').addClass('hidden');
+});
