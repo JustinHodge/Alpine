@@ -2,6 +2,23 @@
     display: none !important;
 }
 
+body {
+    margin: 0;
+}
+
+.header {
+    padding: 20px;
+    width: 100vw;
+    background-color: cornflowerblue;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#logout-button {
+    margin-right: 40px;
+}
+
 .label-input-set {
     display: flex;
     margin-top: 10px;

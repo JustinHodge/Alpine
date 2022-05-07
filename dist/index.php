@@ -6,6 +6,8 @@ define('DB_PASS', 'rootpwd');
 define('DB_DATABASE', 'alpinedb');
 define('MIN_ADMIN_LEVEL', 100);
 
+session_start();
+
 spl_autoload_register(
     function ($class) {
         $file = 'model/' . $class . '.php';
@@ -43,7 +45,8 @@ spl_autoload_register(
 );
 
 $login_page = new ControllerLoginPage;
-$page = $login_page;
+$landing_page = new ControllerLandingPage;
+$page = !empty($_SESSION['logged_in']) ? $landing_page : $login_page;
 $class = !empty($_GET['route']) ? $_GET['route'] : 'ControllerLoginPage';
 $function = !empty($_GET['function']) ? $_GET['function'] : null;
 

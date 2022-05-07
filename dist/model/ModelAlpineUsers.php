@@ -12,19 +12,20 @@ class ModelAlpineUsers extends Model
 
         $query = $this->db->query($sql);
 
-        return $query->fetch_all();
+        return $query->fetch_all(MYSQLI_ASSOC);
     }
 
-    public function getUser($email, $hashed_password)
+    public function getUser($email)
     {
         $sql = "
             SELECT * FROM `alpine_users`
-            WHERE email={$email}
-            AND password={$hashed_password}
+            WHERE `user_email`='{$email}'
         ";
 
         $query = $this->db->query($sql);
 
-        return $query->fetch_all();
+        if ($query) {
+            return $query->fetch_all(MYSQLI_ASSOC)[0];
+        }
     }
 }

@@ -16,6 +16,6 @@ CREATE TABLE `alpine_users` (
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO `alpine_users` (`user_firstname`, `user_lastname`, `user_email`,`user_password`, `user_access_level`)
-    VALUES ('Alpine', 'Admin', 'alpine_admin@localhost.com', '$2y$10$JfacUx1qfk8.RgyHp5W.i.XYpdVUNvB2tIdHTigx.5jOO9ShuUuvm' , 127);
+    VALUES ('Alpine', 'Admin', 'alpine_admin@localhost.com', '$2y$10$SQaPhZaPjBSuhQjYaqLTSOfo9jSyJOLZifFv4Ng16Rql2EldY3cKO' , 127);
 
 COMMIT;

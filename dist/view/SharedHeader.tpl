@@ -16,3 +16,6 @@
 </head>
 
 <body>
+    <div class="header">
+        <button id="logout-button" type="button">Logout</button>
+    </div>
