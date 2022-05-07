@@ -1,4 +1,4 @@
 RewriteEngine On
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !^(.*)(js|css)$
-RewriteRule ^(.*)/(.*)$ /index.php?route=$2 [L,R,QSA]
+RewriteRule ^(.*)/(.*)$ /index.php?route=$1&function=$2 [L,R,QSA]

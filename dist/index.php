@@ -42,6 +42,17 @@ spl_autoload_register(
     }
 );
 
-$page = new ControllerLoginPage;
+$login_page = new ControllerLoginPage;
+$page = $login_page;
+$class = !empty($_GET['route']) ? $_GET['route'] : 'ControllerLoginPage';
+$function = !empty($_GET['function']) ? $_GET['function'] : null;
+
+if (file_exists('./controller' . $class . '.php')) {
+    $page = new $class();
+};
+
+if ($function && method_exists($page, $function)) {
+    $page->$function();
+};
 
 $page->getOutput();
