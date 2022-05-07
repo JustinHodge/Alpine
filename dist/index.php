@@ -4,7 +4,7 @@ define('DB_SERVER', 'alpinedb');
 define('DB_USER', 'root');
 define('DB_PASS', 'rootpwd');
 define('DB_DATABASE', 'alpinedb');
-define('MIN_ADMIN_LEVEL', 100);
+define('MIN_ADMIN_LEVEL', 50);
 
 session_start();
 
@@ -49,18 +49,21 @@ spl_autoload_register(
     }
 );
 
+$access_level = !empty($_SESSION['access_level']) ? $_SESSION['access_level'] : null;
+
 $login_page = new ControllerLoginPage;
-$landing_page = new ControllerLandingPage;
+$landing_page = new ControllerLandingPage($access_level);
 $page = !empty($_SESSION['logged_in']) ? $landing_page : $login_page;
 $class = !empty($_GET['route']) ? $_GET['route'] : 'ControllerLoginPage';
 $function = !empty($_GET['function']) ? $_GET['function'] : null;
 
+
 if (file_exists('./controller' . $class . '.php')) {
-    $page = new $class();
+    $page = new $class($access_level);
 };
 
 if ($function && method_exists($page, $function)) {
     $page->$function();
 };
 
-$page->getOutput();
+echo $page->getOutput();

@@ -16,6 +16,6 @@ abstract class Controller
 
     public function getOutput()
     {
-        echo $this->output;
+        return $this->output;
     }
 }
