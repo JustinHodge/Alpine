@@ -1,4 +1,4 @@
-<script src="" async defer></script>
+<script src="\JS\scripts.js" async defer></script>
 </body>
 
 </html>

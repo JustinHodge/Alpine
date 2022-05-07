@@ -1,0 +1,60 @@
+.hidden {
+    display: none !important;
+}
+
+.label-input-set {
+    display: flex;
+    margin-top: 10px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.login-form, .register-form {
+    width: 50vw;
+    height: 50vh;
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 3px 4px 7px 2px cadetblue;
+}
+
+.button-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+}
+
+button {
+    padding: 10px;
+    margin: 5px 0px 0px 5px;
+    background-color: cadetblue;
+    border: 0px;
+    border-radius: 3px;
+    font-weight: 700;
+}
+
+legend {
+    text-align: center;
+}
+
+input {
+    float: right;
+    margin-left: 10px;
+}
+
+label {
+    float: left;
+}
+
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 100vh;
+}
